@@ -16,7 +16,7 @@ document.getElementById('login-button').addEventListener('click',function(){
     }
     if(emailInput.value.includes('@') && emailInput.value.includes('.') && emailInput.value != '' && passwordInput.value !=''){
         if(emailInput.value == "a@b.c" && passwordInput.value == '1234'){
-            window.location.href();
+            window.location.href= 'account.html';
         }else{
             document.getElementById('errorMassage').innerText = " invalid Email or password";
         }
