@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresher Bank</title>
-     <!-- //tailwind css -->
-     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- //tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="bg-slate-800">
+
     <main class="w-3/4 mx-auto mt-12">
-        <h1 class="text-center text-4xl  font-bold my-6">Welcome To <span class="text-sky-700">Fresher Bank</span></h1>
+        <h1 class="text-center text-4xl text-white  font-bold my-6">Welcome To <span class="text-sky-700">Fresher
+                Bank</span></h1>
 
         <section class="grid sm:grid-cols-3 gap-4 text-white font-semibold">
+            <!-- deposite total -->
             <div class="px-8 py-12 bg-blue-400 rounded">
                 <h2 class="text-2xl">Deposite</h2>
-                <h3 class="text-5xl">$<span>00</span></h3>
+                <h3 class="text-5xl">$<span id="deposite-total">00</span></h3>
             </div>
             <div class="px-8 py-12 bg-red-400 rounded">
+
+                <!-- withdraw total -->
                 <h2 class="text-2xl">Withdraw</h2>
-                <h3 class="text-5xl">$<span>00</span></h3>
+                <h3 class="text-5xl">$<span id="withdraw-total">00</span></h3>
             </div>
             <div class="px-8 py-12 bg-green-400 rounded">
+
+                <!-- balance total -->
                 <h2 class="text-2xl">Balance</h2>
-                <h3 class="text-5xl">$<span>00</span></h3>
+                <h3 class="text-5xl">$<span id="balance-total">00</span></h3>
             </div>
 
         </section>
 
         <section class="grid sm:grid-cols-2 gap-4  font-semibold mt-8 ">
             <div class="bg-orange-200 px-8 py-12 rounded ">
-                <input type="text" class="w-3/4 py-1 px-2 my-1  rounded" placeholder="$ Enter Deposite Amount">
-            <button class="px-3 py-1 sm:grid-cols-3 bg-slate-600 text-white rounded" >Submit</button>
+
+                <!-- deposite input -->
+                <input id="deposite-input" type="text" class="w-3/4 py-1 px-2 my-1  rounded" placeholder="$ Enter Deposite Amount">
+
+            <!-- deposite button -->
+                <button id="deposite-button" class="px-3 py-1 sm:grid-cols-3 bg-slate-600 text-white rounded">Submit</button>
             </div>
             <div class="bg-slate-400 px-8 py-12 rounded ">
-                <input type="text" class="w-3/4 my-1 py-1 px-2  rounded" placeholder="$ Enter Withdraw Amount">
-            <button class="px-3 py-1 my-1 bg-slate-600 text-white rounded" >Submit</button>
+                
+            <!-- withdraw input -->
+                <input id="withdraw-input" type="text" class="w-3/4 my-1 py-1 px-2  rounded" placeholder="$ Enter Withdraw Amount">
+               
+            <!-- withdraw button -->
+                <button id="withdraw-button" class="px-3 py-1 my-1 bg-slate-600 text-white rounded">Submit</button>
             </div>
         </section>
 
@@ -44,49 +60,54 @@
             <h1 class="text-center text-2xl  font-bold my-6"><span class="text-sky-700">Bank Statement</span></h1>
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                  <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                      <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                          <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Balance</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
-                           
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                          <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                              <div class="flex items-center">
-                                <div class="flex-shrink-0 h-10 w-10">
-                                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-                                </div>
-                                <div class="ml-4">
-                                  <div class="text-sm font-medium text-gray-900">Jane Cooper</div>
-                                  <div class="text-sm text-gray-500">jane.cooper@example.com</div>
-                                </div>
-                              </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                              <div class="text-sm text-gray-900">Regional Paradigm Technician</div>
-                              <div class="text-sm text-gray-500">Optimization</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> Active </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-                            
-                          </tr>
-              
-                          <!-- More people... -->
-                        </tbody>
-                      </table>
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead  class="bg-gray-50 ">
+                                    <tr>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Amount</th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Balance</th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Status</th>
+                                        <th scope="col"
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Time</th>
+
+                                </thead>
+                                <tbody id="statement-table-body" class="bg-white divide-y divide-gray-200">
+                                   <!--  <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+
+                                            <h5 class="text-sm font-medium text-gray-900">Jane Cooper</h5>
+
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <h5 class="text-sm text-gray-900">Regional Paradigm Technician</h5>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <h5 class="text-sm text-gray-900">Regional Paradigm Technician</h5>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+
+                                    </tr> -->
+
+                                    <!-- More people... -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
         </section>
     </main>
+
+    <!-- script js  -->
+    <script src="js/account.js"></script>
 </body>
+
 </html>
