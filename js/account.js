@@ -23,24 +23,53 @@ document.getElementById('deposite-button').addEventListener('click', function(e)
 })
 
 //withdraw
+document.getElementById('withdraw-button').addEventListener('click',function(e){
+    const withdrawAmountInput = document.getElementById('withdraw-input');
+    const depositeAmountText = withdrawAmountInput.value;
+    const withdrawAmount = parseFloat(depositeAmountText);
+    if(!isNaN(withdrawAmount) && withdrawAmountInput.value != ''){
+        const withdrawTotal = document.getElementById('withdraw-total');
+        
+        const previousWithdrawTotalText = withdrawTotal.innerText;
+        console.log(previousWithdrawTotalText)
+        const previousWithdrawTotal = parseFloat(previousWithdrawTotalText);
+        
+    const balanceStatus = setBalance(false,withdrawAmount)
+    if(balanceStatus){
+        withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
+    }
+    }
 
 
+})
+
+//total set balance
 function setBalance(status, amount){
     const totalBalance = document.getElementById('balance-total');
     const totalBalanceText = totalBalance.innerText;
     const previousTotalBalance= parseFloat(totalBalanceText);
     if(status == true){
-        totalBalance.innerText = amount + previousTotalBalance;
+        totalBalance.innerText =  previousTotalBalance + amount;
+    }else{
+        if(previousTotalBalance>=amount){
+        totalBalance.innerText =  previousTotalBalance - amount;
+        }else{
+            return false;
+        }
+        
     }
 
     setStatementTable(status,amount,totalBalance.innerHTML);
+    
+    return true;
 }
 
+//set table statements
 function setStatementTable(status,amount,totalBalance){
 
     
     let color = "text-red-700";
-    let statusText = "Widthdraw";
+    let statusText = "Withdraw";
     let amountSymbol = '-';
     if(status){
         
@@ -53,7 +82,7 @@ function setStatementTable(status,amount,totalBalance){
     amount = amountSymbol+amount;
     
     
-
+    //current time 
     const d = new Date();
     let time = d.toLocaleString();
     // console.log(time);
