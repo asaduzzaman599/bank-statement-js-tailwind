@@ -3,24 +3,20 @@
 document.getElementById('login-button').addEventListener('click', function () {
     const emailInput = document.getElementById('email-input');
     const passwordInput = document.getElementById('password-input');
-    if (passwordInput.value == '') {
-        passwordInput.style.border = '2px solid red'
-    } else {
-        passwordInput.style.border = '2px solid blue'
-    }
-
+    
     if (emailInput.value == '') {
-        emailInput.style.border = '2px solid red'
-    } else {
-        emailInput.style.border = '2px solid blue'
+        alert('Email Can Not Empty');
     }
-    if (emailInput.value.includes('@') && emailInput.value.includes('.') && emailInput.value != '' && passwordInput.value != '') {
+    else if (passwordInput.value == '') {
+        alert('Password Can Not Empty');
+    } 
+    else if (emailInput.value.includes('@') && emailInput.value.includes('.') ) {
         if (emailInput.value == "a@b.c" && passwordInput.value == '1234') {
             window.location.href = 'account.html';
         } else {
-            document.getElementById('errorMassage').innerText = " invalid Email or password";
+            alert("invalid Email or password. Use email: a@b.c and password: 1234");
         }
     } else {
-        emailInput.style.border = '2px solid red'
+        alert("Wrong Email Pattern");
     }
 })
